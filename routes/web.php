@@ -22,7 +22,6 @@ $router->get('/', function () {
 });
 
 $router->group(['prefix' => '/v1/public'], function() use ($router) {
-    $router->get('/characters', [
-            'as' => 'characters', 
-            'characters' => 'CharactersController@index']);
+    $router->get('/characters', 
+        ['as' => 'characters', 'uses' => 'CharactersController@index']);
 });
