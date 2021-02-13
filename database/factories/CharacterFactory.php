@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Character;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CharacterFactory extends Factory
@@ -22,8 +22,10 @@ class CharacterFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
+            'name' => $this->faker->unique()->name,
+            'description' => $this->faker->text,
+            'resourceURI' => $this->faker->url,
+            'modified' => $this->faker->date()
         ];
     }
 }
