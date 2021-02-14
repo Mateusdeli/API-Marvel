@@ -4,6 +4,7 @@ API da Marvel desenvolvida utilizando o micro-framework do Laravel chamado Lumen
 
 ## Comandos
 
+> composer install
 > php artisan migrate <br>
 > php artisan db:seed <br>
 > php -S localhost:5000 -t public/ <br>
