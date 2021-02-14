@@ -4,6 +4,11 @@ API da Marvel desenvolvida utilizando o micro-framework do Laravel chamado Lumen
 
 ## Comandos
 
+### Docker
+
+#### Iniciando os containers
+> docker-compose up -d
+
 #### Instalando as dependencias
 > composer install <br>
 
@@ -15,7 +20,3 @@ API da Marvel desenvolvida utilizando o micro-framework do Laravel chamado Lumen
 
 #### Iniciando o servidor
 > php -S localhost:5000 -t public/ <br>
-
-## Docker
-
-> docker-compose up -d
