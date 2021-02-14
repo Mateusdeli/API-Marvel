@@ -13,15 +13,15 @@ trait ResponseTrait
             'code' => 200,
             'status' => 'Ok',
             'results' => $colletion
-        ], 200);
+        ], 200, ['Content-type: application/json']);
     }
 
     private function errorNotFoundResponse(Throwable $ex)
     {
-        return response([
+        return response()->json([
             'code' => 404,
             'status' => 'Not Found',
             'message' => $ex->getMessage()
-        ], 404);
+        ], 404, ['Content-type: application/json']);
     }
 }
