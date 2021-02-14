@@ -17,23 +17,23 @@ class CharacterService
     public function getAllCharacters(): Collection
     {
         $characters = $this->characterRepository->getAll();
-        $messageError = "Nenhum registro foi encontrado.";
-        return $this->executeFindInTableWithRelations($characters, $messageError);
+        return $this->executeFindInTableWithRelations($characters);
     }
 
     public function findCharactersById(int $id, string $table): Collection
     {
         $characters = $this->characterRepository->getByIdWithRelations($id, $table);
-        $tableFirstLetterUpperCase = ucfirst($table);
-        $messageError = "Nenhum registro foi encontrado na tabela de {$tableFirstLetterUpperCase}.";
-        return $this->executeFindInTableWithRelations($characters, $messageError);
+        return $this->executeFindInTableWithRelations($characters);
     }
 
     private function executeFindInTableWithRelations(Collection $characters, string $messageError = ''): Collection
     {
-        $countDefault = 0;
-        if (count($characters) <= $countDefault) {
-            if (!empty($messageError)) {
+        $defaultCount = 0;
+        $defaultMessageError = "Nenhum registro foi encontrado.";
+        if (count($characters) <= $defaultCount) {
+            if (empty($messageError)) {
+                throw new Exception($defaultMessageError);
+            } else {
                 throw new Exception($messageError);
             }
         }
