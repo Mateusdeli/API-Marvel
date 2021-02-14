@@ -25,13 +25,14 @@ class CharacterService
     {
         $characters = $this->characterRepository->getByIdWithRelations($id, $table);
         $tableFirstLetterUpperCase = ucfirst($table);
-        $messageError = "Nenhum registro foi encontrado na tabela {$tableFirstLetterUpperCase}.";
+        $messageError = "Nenhum registro foi encontrado na tabela de {$tableFirstLetterUpperCase}.";
         return $this->executeFindInTableWithRelations($characters, $messageError);
     }
 
     private function executeFindInTableWithRelations(Collection $characters, string $messageError = ''): Collection
     {
-        if (count($characters) <= 0) {
+        $countDefault = 0;
+        if (count($characters) <= $countDefault) {
             if (!empty($messageError)) {
                 throw new Exception($messageError);
             }
