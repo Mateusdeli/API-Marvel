@@ -41,4 +41,36 @@ class CharactersController extends Controller
         }
     }
 
+    public function showEvents(int $id)
+    {
+        try {
+            $characterWithComics = $this->characterService->findCharactersById($id, Character::EVENTS_TABLE);
+            $this->successResponse($characterWithComics);
+        }
+        catch (Throwable $ex) {
+            return $this->errorNotFoundResponse($ex);
+        }
+    }
+
+    public function showSeries(int $id)
+    {
+        try {
+            $characterWithComics = $this->characterService->findCharactersById($id, Character::SERIES_TABLE);
+            $this->successResponse($characterWithComics);
+        }
+        catch (Throwable $ex) {
+            return $this->errorNotFoundResponse($ex);
+        }
+    }
+
+    public function showStories(int $id)
+    {
+        try {
+            $characterWithComics = $this->characterService->findCharactersById($id, Character::STORIES_TABLE);
+            $this->successResponse($characterWithComics);
+        }
+        catch (Throwable $ex) {
+            return $this->errorNotFoundResponse($ex);
+        }
+    }
 }
