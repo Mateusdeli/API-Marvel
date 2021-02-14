@@ -9,7 +9,8 @@ class Comic extends Model
 {
     use HasFactory;
 
-    protected $timestamps = false;
+    public $timestamps = false;
+    protected $table = 'tb_comics';
     protected $fillable = [
         'title',
         'modified',

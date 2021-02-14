@@ -24,4 +24,7 @@ $router->get('/', function () {
 $router->group(['prefix' => '/v1/public'], function() use ($router) {
     $router->get('/characters', 
         ['as' => 'characters', 'uses' => 'CharactersController@index']);
+
+    $router->get('/characters/{id}/comics', 
+        ['as' => 'characters', 'uses' => 'CharactersController@showComics']);
 });

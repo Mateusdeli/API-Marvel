@@ -9,7 +9,8 @@ class Storie extends Model
 {
     use HasFactory;
 
-    protected $timestamps = false;
+    public $timestamps = false;
+    protected $table = 'tb_stories';
     protected $fillable = [
         'title',
         'description',

@@ -9,7 +9,8 @@ class Serie extends Model
 {
     use HasFactory;
 
-    protected $timestamps = false;
+    public $timestamps = false;
+    protected $table = 'tb_series';
     protected $fillable = [
         'title',
         'description',

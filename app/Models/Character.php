@@ -9,7 +9,13 @@ class Character extends Model
 {
     use HasFactory;
 
-    protected $timestamps = false;
+    const COMICS_TABLE = 'comics';
+    const EVENTS_TABLE = 'events';
+    const SERIES_TABLE = 'series';
+    const STORIES_TABLE = 'stories';
+
+    public $timestamps = false;
+    protected $table = 'tb_characters';
     protected $fillable = [
         'name', 
         'description', 
