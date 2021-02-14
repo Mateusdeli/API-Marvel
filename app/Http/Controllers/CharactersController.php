@@ -23,7 +23,7 @@ class CharactersController extends Controller
     {
         try {
             $characters = $this->characterService->getAllCharacters();
-            $this->successResponse($characters);
+            return $this->successResponse($characters);
         } 
         catch (Throwable $ex) {
             return $this->errorNotFoundResponse($ex);
@@ -34,7 +34,7 @@ class CharactersController extends Controller
     {
         try {
             $characterWithComics = $this->characterService->findCharactersById($id, Character::COMICS_TABLE);
-            $this->successResponse($characterWithComics);
+            return $this->successResponse($characterWithComics);
         }
         catch (Throwable $ex) {
             return $this->errorNotFoundResponse($ex);
@@ -45,7 +45,7 @@ class CharactersController extends Controller
     {
         try {
             $characterWithComics = $this->characterService->findCharactersById($id, Character::EVENTS_TABLE);
-            $this->successResponse($characterWithComics);
+            return $this->successResponse($characterWithComics);
         }
         catch (Throwable $ex) {
             return $this->errorNotFoundResponse($ex);
@@ -56,7 +56,7 @@ class CharactersController extends Controller
     {
         try {
             $characterWithComics = $this->characterService->findCharactersById($id, Character::SERIES_TABLE);
-            $this->successResponse($characterWithComics);
+            return $this->successResponse($characterWithComics);
         }
         catch (Throwable $ex) {
             return $this->errorNotFoundResponse($ex);
@@ -67,7 +67,7 @@ class CharactersController extends Controller
     {
         try {
             $characterWithComics = $this->characterService->findCharactersById($id, Character::STORIES_TABLE);
-            $this->successResponse($characterWithComics);
+            return $this->successResponse($characterWithComics);
         }
         catch (Throwable $ex) {
             return $this->errorNotFoundResponse($ex);
