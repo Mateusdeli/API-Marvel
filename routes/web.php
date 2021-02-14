@@ -26,5 +26,14 @@ $router->group(['prefix' => '/v1/public'], function() use ($router) {
         ['as' => 'characters', 'uses' => 'CharactersController@index']);
 
     $router->get('/characters/{id}/comics', 
-        ['as' => 'characters', 'uses' => 'CharactersController@showComics']);
+        ['as' => 'characters.comics', 'uses' => 'CharactersController@showComics']);
+
+    $router->get('/characters/{id}/events', 
+        ['as' => 'characters.events', 'uses' => 'CharactersController@showEvents']);
+
+    $router->get('/characters/{id}/series', 
+        ['as' => 'characters.series', 'uses' => 'CharactersController@showSeries']);
+
+    $router->get('/characters/{id}/stories', 
+        ['as' => 'characters.stories', 'uses' => 'CharactersController@showStories']);
 });
