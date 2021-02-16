@@ -30,10 +30,10 @@ class CharactersController extends Controller
         }
     }
 
-    public function showComics(int $id)
+    public function showComics(int $characterId)
     {
         try {
-            $characterWithComics = $this->characterService->findCharactersById($id, Character::COMICS_TABLE);
+            $characterWithComics = $this->characterService->findCharactersById($characterId, Character::COMICS_TABLE);
             return $this->successResponse($characterWithComics);
         }
         catch (Throwable $ex) {
@@ -41,10 +41,10 @@ class CharactersController extends Controller
         }
     }
 
-    public function showEvents(int $id)
+    public function showEvents(int $characterId)
     {
         try {
-            $characterWithComics = $this->characterService->findCharactersById($id, Character::EVENTS_TABLE);
+            $characterWithComics = $this->characterService->findCharactersById($characterId, Character::EVENTS_TABLE);
             return $this->successResponse($characterWithComics);
         }
         catch (Throwable $ex) {
@@ -52,10 +52,10 @@ class CharactersController extends Controller
         }
     }
 
-    public function showSeries(int $id)
+    public function showSeries(int $characterId)
     {
         try {
-            $characterWithComics = $this->characterService->findCharactersById($id, Character::SERIES_TABLE);
+            $characterWithComics = $this->characterService->findCharactersById($characterId, Character::SERIES_TABLE);
             return $this->successResponse($characterWithComics);
         }
         catch (Throwable $ex) {
@@ -63,10 +63,10 @@ class CharactersController extends Controller
         }
     }
 
-    public function showStories(int $id)
+    public function showStories(int $characterId)
     {
         try {
-            $characterWithComics = $this->characterService->findCharactersById($id, Character::STORIES_TABLE);
+            $characterWithComics = $this->characterService->findCharactersById($characterId, Character::STORIES_TABLE);
             return $this->successResponse($characterWithComics);
         }
         catch (Throwable $ex) {

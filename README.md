@@ -9,3 +9,6 @@ API da Marvel desenvolvida utilizando o micro-framework do Laravel chamado Lumen
 > php artisan migrate <br>
 > php artisan db:seed <br>
 > php -S localhost:5000 -t public/ <br>
+
+## Executar os Testes
+> ./vendor/bin/phpunit tests <br>
