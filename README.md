@@ -20,7 +20,7 @@ API da Marvel desenvolvida utilizando o micro-framework do Laravel chamado Lumen
 > ./vendor/bin/phpunit tests <br>
 
 ## Endpoints
-> http://localhost:5000/v1/public/v1/public/characters <br>
+> http://localhost:5000/v1/public/characters <br>
 > http://localhost:5000/v1/public/characters/{characterId} <br>
 > http://localhost:5000/v1/public/characters/{characterId}/comics <br>
 > http://localhost:5000/v1/public/characters/{characterId}/events <br>
