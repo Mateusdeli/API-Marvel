@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\Traits;
 
-use Illuminate\Database\Eloquent\Collection;
 use Throwable;
 
 trait ResponseTrait
 {
-    private function successResponse(Collection $colletion)
+    private function successResponse($result)
     {
         return response()->json([
             'code' => 200,
             'status' => 'Ok',
-            'results' => $colletion
+            'results' => $result
         ], 200, ['Content-type: application/json']);
     }
 

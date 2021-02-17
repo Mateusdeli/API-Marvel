@@ -16,10 +16,17 @@ class CharacterRepository implements CharacterRepositoryInterface
         }
         return Character::with($relationsDefault)->get();
     }
-    
-    public function getByIdWithRelations(int $id, string $table): Collection
+
+    public function getById(int $characterId): Collection
     {
-        $condition = ['id', '=', $id];
+        $condition = ['id', '=', $characterId];
+        $relationsDefault = ['comics', 'events', 'series', 'stories'];
+        return Character::with($relationsDefault)->where(...$condition)->get();
+    }
+    
+    public function getByIdWithRelations(int $characterId, string $table): Collection
+    {
+        $condition = ['id', '=', $characterId];
         return Character::where(...$condition)->with($table)->get();
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Character;
 use App\Repositories\CharacterRepository;
 use App\Repositories\Interfaces\CharacterRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
@@ -14,6 +15,13 @@ class RepositoryTest extends TestCase
         parent::setUp();
         $this->repository = new CharacterRepository();
         $this->id = 5;
+    }
+
+    public function test_get_character_by_id()
+    {
+        $greaterThan = 0;
+        $character = $this->repository->getById($this->id);
+        $this->assertGreaterThan($greaterThan, count($character), "A lista de personagens não é maior que {$greaterThan}");
     }
 
     public function test_check_get_all_characters_records()

@@ -20,10 +20,20 @@ class CharacterService
         return $this->executeFindInTableWithRelations($characters);
     }
 
-    public function findCharactersById(int $id, string $table): Collection
+    public function getCharactersByIdWithRelations(int $characterId, string $table): Collection
     {
-        $characters = $this->characterRepository->getByIdWithRelations($id, $table);
+        $characters = $this->characterRepository->getByIdWithRelations($characterId, $table);
         return $this->executeFindInTableWithRelations($characters);
+    }
+
+    public function getCharacterById(int $characterId)
+    {
+        $defaultMessageError = "Nao foi encontrado nenhum personagem com o id {$characterId}.";
+        $character = $this->characterRepository->getById($characterId);
+        if (is_null($character) || empty($character)) {
+            throw new Exception($defaultMessageError);
+        }
+        return $character;
     }
 
     private function executeFindInTableWithRelations(Collection $characters, string $messageError = ''): Collection
